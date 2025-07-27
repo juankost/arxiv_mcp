@@ -3,7 +3,7 @@ import os
 import requests
 from dotenv import load_dotenv
 from mcp.server.fastmcp import FastMCP
-from .mistral_ocr import convert_pdf_to_markdown, cleanup_markdown_text
+from arxiv_mcp.mistral_ocr import convert_pdf_to_markdown, cleanup_markdown_text
 
 
 load_dotenv()

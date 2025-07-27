@@ -10,10 +10,6 @@ cache/
 __pycache__/
 *.pyc
 *.pyo
-.python-version
 
 # macOS
 .DS_Store
-
-# Lock files (optional)
-uv.lock

@@ -3,7 +3,7 @@
 Main entry point for the arxiv-mcp server.
 """
 
-from src.server import mcp
+from arxiv_mcp.server import mcp
 
 
 def main():

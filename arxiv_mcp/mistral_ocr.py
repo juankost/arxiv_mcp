@@ -2,7 +2,7 @@ from mistralai import Mistral
 import PyPDF2
 from typing import Optional, List
 import os
-from src.utils import retry_with_exponential_backoff
+from arxiv_mcp.utils import retry_with_exponential_backoff
 
 MIN_PAGES = 10
 
