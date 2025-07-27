@@ -11,7 +11,7 @@ PAPER_DIR = os.getenv("PAPER_DIR", "papers")
 # os.makedirs(f"{PAPER_DIR}/pdf", exist_ok=True)
 # os.makedirs(f"{PAPER_DIR}/md", exist_ok=True)
 
-mcp = FastMCP("arxiv_mcp", port=os.environ.get("PORT", 8001))
+mcp = FastMCP("arxiv_mcp")
 
 
 @mcp.tool()

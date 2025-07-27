@@ -11,7 +11,13 @@ load_dotenv()
 
 def main():
     """Run the MCP server."""
-    mcp.run(transport=os.environ.get("TRANSPORT", "stdio"))
+    transport = os.environ.get("TRANSPORT", "stdio")
+    if transport in ["sse", "http", "streamable-http"]:
+        host = os.environ.get("HOST", "0.0.0.0")
+        port = int(os.environ.get("PORT", 8001))
+        mcp.run(transport=transport, host=host, port=port)
+    else:  # stdio
+        mcp.run(transport=transport)
 
 
 if __name__ == "__main__":
