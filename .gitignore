@@ -1,0 +1,19 @@
+# Node.js
+node_modules/
+
+# Downloaded/generated papers
+papers/
+cache/
+.venv/
+
+# Python
+__pycache__/
+*.pyc
+*.pyo
+.python-version
+
+# macOS
+.DS_Store
+
+# Lock files (optional)
+uv.lock

@@ -1,0 +1,13 @@
+{
+  "name": "arxiv-mcp",
+  "version": "1.0.0",
+  "description": "ArXiv MCP Server",
+  "private": true,
+  "scripts": {
+    "inspect": "mcp-inspector uv run python src/server.py",
+    "inspect:dev": "mcp-inspector --port 3000 uv run python src/server.py"
+  },
+  "devDependencies": {
+    "@modelcontextprotocol/inspector": "^0.16.2"
+  }
+}
