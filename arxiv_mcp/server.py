@@ -80,10 +80,10 @@ def get_markdown_text_from_paper_URL(url_path: str):
     """
     Extracts nicely formatted markdown text from a paper URL and returns the markdown text
     Args:
-        pdf_path (str): The path to the PDF file to convert.
+        url_path (str): The URL of the paper to convert.
 
     Returns:
-        str: The path to the markdown file.
+        str: The markdown text of the paper.
     """
     paper_id = get_paper_id_from_url(url_path)
     markdown_path = f"{PAPER_DIR}/md/{paper_id}.md"
