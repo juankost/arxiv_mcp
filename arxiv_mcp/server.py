@@ -7,12 +7,11 @@ from arxiv_mcp.mistral_ocr import convert_pdf_to_markdown, cleanup_markdown_text
 
 
 load_dotenv()
-
-# Create a directory to store the papers
 PAPER_DIR = os.getenv("PAPER_DIR", "papers")
+# os.makedirs(f"{PAPER_DIR}/pdf", exist_ok=True)
+# os.makedirs(f"{PAPER_DIR}/md", exist_ok=True)
 
-# Initialize FastMCP server
-mcp = FastMCP("research")
+mcp = FastMCP("arxiv_mcp", port=os.environ.get("PORT", 8001))
 
 
 @mcp.tool()
