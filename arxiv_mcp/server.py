@@ -85,19 +85,13 @@ def get_markdown_text_from_paper_URL(url_path: str):
     Returns:
         str: The path to the markdown file.
     """
-    # Check if the markdown file exists in cache:
     paper_id = get_paper_id_from_url(url_path)
-    output_path = f"{PAPER_DIR}/md/{paper_id}.md"
-    if os.path.isfile(output_path):
-        with open(output_path, "r") as f:
-            return f.read()
-    else:
-        # It doesn't exist, download the PDF and convert it to markdown
-        pdf_path = download_paper_pdf(url_path)
-        markdown_path = f"{PAPER_DIR}/md/{paper_id}.md"
-        markdown_text = convert_pdf_to_markdown(pdf_path, markdown_path)
-        cleaned_markdown_text = cleanup_markdown_text(markdown_text)
-        return cleaned_markdown_text
+    markdown_path = f"{PAPER_DIR}/md/{paper_id}.md"
+
+    # The caching logic is now inside convert_pdf_to_markdown
+    markdown_text = convert_pdf_to_markdown(url_path, markdown_path)
+    cleaned_markdown_text = cleanup_markdown_text(markdown_text)
+    return cleaned_markdown_text
 
 
 def test_get_url_from_arxiv_paper_id():
