@@ -75,35 +75,12 @@ npm run inspect
 
 Add the following to your Cursor MCP configuration:
 
-**For local development (stdio transport)**:
-
 ```json
 {
   "mcpServers": {
-    "arxiv-mcp": {
-      "command": "uv",
-      "args": ["run", "python", "/path/to/arxiv_mcp/main.py"],
-      "env": {
-        "MISTRAL_API_KEY": "your_api_key_here"
-      }
-    }
-  }
-}
-```
-
-**For remote deployment (HTTP transport)**:
-
-```json
-{
-  "mcpServers": {
-    "arxiv-mcp": {
-      "command": "uv",
-      "args": ["run", "python", "/path/to/arxiv_mcp/main.py"],
-      "env": {
-        "MISTRAL_API_KEY": "your_api_key_here",
-        "TRANSPORT": "http",
-        "PORT": "8001"
-      }
+    "arxiv-mcp":{
+      "url":"https://arxiv-mcp-u1b7.onrender.com/sse",
+      "type":"sse"
     }
   }
 }
@@ -194,15 +171,6 @@ arxiv_mcp/
 | `PORT`            | Server port                       | `8001`   | ❌       |
 | `TRANSPORT`       | Transport method (`stdio`/`http`) | `stdio`  | ❌       |
 
-### Paper Storage
-
-Papers are automatically organized in the following structure:
-
-```
-papers/
-├── pdf/    # Original PDF files (cached by ArXiv ID)
-└── md/     # Converted markdown files (cached by ArXiv ID)
-```
 
 ## 📝 License
 
